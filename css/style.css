@@ -4,13 +4,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth; /* Enables elegant jumping from navbar anchors */
+    scroll-behavior: smooth;
+    /* Enables elegant jumping from navbar anchors */
 }
 
 body {
-    background-color: #080c14; 
+    background-color: #080c14;
     color: #ffffff;
-    padding: 0 8%; 
+    padding: 0 8%;
 }
 
 /* NAVBAR */
@@ -19,23 +20,29 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
-    height: 110px;       /* Increased from 80px to give your larger logo plenty of room */
+    height: 110px;
+    /* Increased from 80px to give your larger logo plenty of room */
 }
 
 .logo {
     display: flex;
     align-items: center;
-    height: 100%;        /* Forces the logo container to stay perfectly within the navbar limits */
+    height: 100%;
+    /* Forces the logo container to stay perfectly within the navbar limits */
     width: auto;
 }
 
 /* Logo Picture Styling - Large & Stable */
 .logo-img {
-    height: 180px;        /* Increased from 45px to make it noticeably larger and clearer */
-    width: auto;         /* Automatically calculates the exact width to prevent stretching */
+    height: 180px;
+    /* Increased from 45px to make it noticeably larger and clearer */
+    width: auto;
+    /* Automatically calculates the exact width to prevent stretching */
     display: block;
-    object-fit: contain; /* Keeps your image proportions crisp and uncropped */
+    object-fit: contain;
+    /* Keeps your image proportions crisp and uncropped */
 }
+
 nav a {
     color: #a5b4fc;
     text-decoration: none;
@@ -47,6 +54,7 @@ nav a {
 nav a:hover {
     color: #ffffff;
 }
+
 /* Fixes the behavior of the Hire Me anchor link button mapping */
 #hireBtn:hover {
     color: #ffffff;
@@ -93,7 +101,8 @@ button {
     margin-right: 15px;
     display: inline-flex;
     align-items: center;
-    gap: 8px; /* Spaces out the logo icon and text */
+    gap: 8px;
+    /* Spaces out the logo icon and text */
     transition: 0.3s;
 }
 
@@ -109,7 +118,8 @@ button {
 }
 
 /* Global Button Interactive Hovers */
-button:hover, .btn-link:hover {
+button:hover,
+.btn-link:hover {
     opacity: 0.9;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
@@ -139,7 +149,7 @@ button:hover, .btn-link:hover {
 }
 
 .highlight {
-    color: #6366f1; 
+    color: #6366f1;
 }
 
 .hero-text h2 {
@@ -163,7 +173,7 @@ button:hover, .btn-link:hover {
     height: 320px;
     border-radius: 20px;
     object-fit: cover;
-    background: linear-gradient(45deg, #1e1b4b, #311042); 
+    background: linear-gradient(45deg, #1e1b4b, #311042);
     padding: 5px;
 }
 
@@ -183,8 +193,9 @@ button:hover, .btn-link:hover {
     margin-bottom: 10px;
 }
 
-.about-box, .skills-box {
-    background-color: #0f172a; 
+.about-box,
+.skills-box {
+    background-color: #0f172a;
     border: 1px solid #1e293b;
     border-radius: 12px;
     padding: 30px;
@@ -192,7 +203,8 @@ button:hover, .btn-link:hover {
 }
 
 /* Target element offsets to align smooth scroll cleanly below navbar */
-#resume, #contact {
+#resume,
+#contact {
     scroll-margin-top: 30px;
 }
 
@@ -326,13 +338,14 @@ button:hover, .btn-link:hover {
     font-size: 14px;
     margin-top: 5px;
 }
-footer{
 
-text-align:center;
+footer {
 
-padding:40px;
+    text-align: center;
 
-background:#010713;
+    padding: 40px;
+
+    background: #010713;
 
 }
 
@@ -349,9 +362,11 @@ background:#010713;
     gap: 20px;
     flex-wrap: wrap;
 }
-.graphics-header{
-     margin-bottom: 30px;
+
+.graphics-header {
+    margin-bottom: 30px;
 }
+
 .graphics-card {
     background-color: #0f172a;
     border: 1px solid #1e293b;
@@ -388,7 +403,8 @@ background:#010713;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(99, 102, 241, 0.85); /* Purple theme overlay veil mask */
+    background: rgba(99, 102, 241, 0.85);
+    /* Purple theme overlay veil mask */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -416,14 +432,17 @@ background:#010713;
 
 /* 3. POPUP LIGHTBOX IMAGE DIALOG MODAL */
 .lightbox-modal {
-    display: none; /* Hidden by default layout status */
+    display: none;
+    /* Hidden by default layout status */
     position: fixed;
-    z-index: 9999; /* Forces popup card safely on top of the navbar image rules */
+    z-index: 9999;
+    /* Forces popup card safely on top of the navbar image rules */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(8, 12, 20, 0.96); /* Back drop shadow screen shield mask */
+    background-color: rgba(8, 12, 20, 0.96);
+    /* Back drop shadow screen shield mask */
     justify-content: center;
     align-items: center;
 }
@@ -460,13 +479,27 @@ background:#010713;
 
 /* GLOBAL INTERACTION KEYFRAME ANIMATIONS */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes zoomIn {
-    from { transform: scale(0.94); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from {
+        transform: scale(0.94);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* ==========================================================================
@@ -480,12 +513,12 @@ background:#010713;
 }
 
 .contact-form-container {
-    background-color: #0f172a; 
+    background-color: #0f172a;
     border: 1px solid #1e293b;
     border-radius: 12px;
     padding: 40px;
     width: 100%;
-    max-width: 650px; 
+    max-width: 650px;
 }
 
 .contact-desc {
@@ -514,7 +547,7 @@ background:#010713;
 
 .form-group input,
 .form-group textarea {
-    background-color: #1e293b; 
+    background-color: #1e293b;
     border: 1px solid #334155;
     border-radius: 6px;
     padding: 12px 16px;
@@ -527,7 +560,7 @@ background:#010713;
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #6366f1; 
+    border-color: #6366f1;
     box-shadow: 0 0 8px rgba(99, 102, 241, 0.2);
 }
 
@@ -539,120 +572,180 @@ background:#010713;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-right: 0; 
+    margin-right: 0;
 }
 
 /* ==========================================================================
-   FLUID RESPONSIVE BASE LAYOUTS
+   GLOBAL DESKTOP CONFIGURATIONS (Hides mobile assets initially)
    ========================================================================== */
+.nav-toggle {
+    display: none;
+    /* Hides the hamburger toggle entirely on desktops! */
+}
 
-/* Navbar Restyling for wrapping fluid layout status */
-.navbar {
-    display: flex;
-    justify-content: space-between;
+.mobile-hire-link {
+    display: none;
+    /* Hides the dropdown style version of Hire Me on desktops */
+}
+
+.desktop-hire-btn {
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
-    padding: 20px 0;
-    flex-wrap: wrap; /* Allows menu links to fall nicely below the logo if crowded */
-    gap: 15px;
-}
-
-/* Hero Content Area adjustment */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 0;
-    flex-wrap: wrap; /* Forces layout to stack image under text on narrow mobile views */
-    gap: 30px;
-}
-
-.hero-text {
-    flex: 1;
-    min-width: 300px; /* Keeps text container flexible but prevents it from shrinking to zero */
-}
-
-.hero-image {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
     justify-content: center;
 }
 
-.hero-image img {
-    max-width: 100%; /* Keeps your portrait image from bleeding past device edge tracks */
-    height: auto;
-}
-
-/* About and Skills Container Flex wrapping adjustments */
-.about-skills-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 40px 0;
-    flex-wrap: wrap; /* Stacks skills block directly underneath the primary about box */
-}
-
-.about-box, .skills-box {
-    flex: 1;
-    min-width: 300px; /* Forces stack once viewport size is smaller than individual minimum targets */
-}
-
 /* ==========================================================================
-   MOBILE DEVICES MEDIA QUERY BREAKPOINT (Screens 768px and smaller)
+   MOBILE DEVICES MEDIA QUERY BREAKPOINT (Android & iOS Optimization)
    ========================================================================== */
 @media screen and (max-width: 768px) {
-    
+
     body {
-        padding: 0 4%; /* Gives you wider reading margins on small phone viewports */
+        padding: 0 4%;
+        /* Safe text boundaries on tiny mobile monitors */
+        overflow-x: hidden;
+        /* Stops horizontal screen layout breaking shifts */
     }
 
+    /* 1. INTERACTIVE HAMBURGER TOGGLER NAVIGATION */
     .navbar {
-        flex-direction: column; /* Stacks Logo, Nav Links, and Hire Me Button sequentially */
-        text-align: center;
-    }
-
-    nav {
-        margin: 10px 0;
+        position: relative;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+        /* Locked height preserves structural balance */
     }
 
-    nav a {
-        margin: 0 8px; /* Tighter padding so menu items fit on one horizontal track line */
+    .nav-toggle {
+        display: block;
+        /* Reveals menu toggle button ONLY on mobile screens! */
+        background: transparent;
+        border: none;
+        color: #ffffff;
+        font-size: 26px;
+        cursor: pointer;
     }
 
+    .desktop-hire-btn {
+        display: none;
+        /* Hides raw desktop header layout button completely on phone viewports */
+    }
+
+    .mobile-hire-link {
+        display: block;
+        /* Reveals link block inside dropdown on phones */
+        color: #6366f1 !important;
+        /* Highlights Hire Me with your brand accent color */
+        font-weight: bold;
+    }
+
+    /* Hidden Dropdown Panel Styles */
+    .nav-menu {
+        display: none;
+        /* Hidden by default until activated */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #0f172a;
+        /* Solid dark blue container color matches template look */
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        padding: 20px;
+        z-index: 1000;
+        gap: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Activated Toggle State Style Rule */
+    .nav-menu.open {
+        display: flex;
+        animation: slideMenuDown 0.25s ease-in-out;
+    }
+
+    .nav-menu a {
+        margin: 0;
+        padding: 12px;
+        width: 100%;
+        font-size: 16px;
+        border-bottom: 1px solid #1e293b;
+    }
+
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+
+    /* 2. PROFILE HERO AREA ADJUSTMENT */
     .hero {
-        flex-direction: column-reverse; /* Places text on top and image on bottom for readability */
+        flex-direction: column-reverse;
+        /* Stacks introduction description over avatar safely */
         text-align: center;
         padding: 30px 0;
+        gap: 25px;
     }
 
-    .hero-text h1 {
-        font-size: 36px; /* Scales typography scale down slightly for mobile dimensions */
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        width: 250px;
+        /* Trimmed sizing scales smoothly inside smartphone frames */
+        height: 250px;
     }
 
     .hero-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
         gap: 12px;
     }
 
     .btn-link {
-        margin-right: 0; /* Align link blocks accurately centered on mobile panels */
-        width: 100%; /* Expands buttons to full width for easier mobile thumb-tapping */
+        width: 100%;
         justify-content: center;
+        margin-right: 0;
     }
 
-    .about-skills-container {
-        gap: 25px;
-    }
-
-    .projects-header, .graphics-header {
+    /* 3. ONE-AFTER-THE-OTHER VERTICAL PROJECT STACKING */
+    .projects-container,
+    .graphics-container {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 15px;
+        /* Organizes all cards linearly one below the other */
+        gap: 25px;
+        width: 100%;
+    }
+
+    .project-card,
+    .graphics-card {
+        width: 100%;
+        /* Spans full horizontal track width without clipping */
+        box-sizing: border-box;
+    }
+
+    .project-img-placeholder {
+        height: 140px;
+        /* Reduced proportions make cards clean and compact */
+    }
+
+    /* 4. SKILLS CONTAINER GRID FLEX */
+    .about-skills-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* Slide Dropdown Entrance Keyframes Animation */
+@keyframes slideMenuDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
