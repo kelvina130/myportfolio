@@ -541,3 +541,118 @@ background:#010713;
     gap: 10px;
     margin-right: 0; 
 }
+
+/* ==========================================================================
+   FLUID RESPONSIVE BASE LAYOUTS
+   ========================================================================== */
+
+/* Navbar Restyling for wrapping fluid layout status */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    flex-wrap: wrap; /* Allows menu links to fall nicely below the logo if crowded */
+    gap: 15px;
+}
+
+/* Hero Content Area adjustment */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    flex-wrap: wrap; /* Forces layout to stack image under text on narrow mobile views */
+    gap: 30px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px; /* Keeps text container flexible but prevents it from shrinking to zero */
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%; /* Keeps your portrait image from bleeding past device edge tracks */
+    height: auto;
+}
+
+/* About and Skills Container Flex wrapping adjustments */
+.about-skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 0;
+    flex-wrap: wrap; /* Stacks skills block directly underneath the primary about box */
+}
+
+.about-box, .skills-box {
+    flex: 1;
+    min-width: 300px; /* Forces stack once viewport size is smaller than individual minimum targets */
+}
+
+/* ==========================================================================
+   MOBILE DEVICES MEDIA QUERY BREAKPOINT (Screens 768px and smaller)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    body {
+        padding: 0 4%; /* Gives you wider reading margins on small phone viewports */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stacks Logo, Nav Links, and Hire Me Button sequentially */
+        text-align: center;
+    }
+
+    nav {
+        margin: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        margin: 0 8px; /* Tighter padding so menu items fit on one horizontal track line */
+    }
+
+    .hero {
+        flex-direction: column-reverse; /* Places text on top and image on bottom for readability */
+        text-align: center;
+        padding: 30px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 36px; /* Scales typography scale down slightly for mobile dimensions */
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .btn-link {
+        margin-right: 0; /* Align link blocks accurately centered on mobile panels */
+        width: 100%; /* Expands buttons to full width for easier mobile thumb-tapping */
+        justify-content: center;
+    }
+
+    .about-skills-container {
+        gap: 25px;
+    }
+
+    .projects-header, .graphics-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+}
