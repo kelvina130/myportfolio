@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightboxClose = document.querySelector(".lightbox-close");
 
     // ==========================================================================
-    // IMAGE LIGHTBOX CLICK POPUP ENGINE
+    // 1. IMAGE LIGHTBOX CLICK POPUP ENGINE
     // ==========================================================================
     if (graphicsLinks.length > 0 && lightboxModal && modalTargetImg) {
 
@@ -43,43 +43,43 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-});
 
-// ==========================================================================
-// 3. MOBILE HAMBURGER DROPDOWN DRAW NAVIGATION ENGINE
-// ==========================================================================
-const navToggleBtn = document.getElementById("navToggleBtn");
-const navMenu = document.getElementById("navMenu");
-const navMenuLinks = document.querySelectorAll(".nav-menu a");
+    // ==========================================================================
+    // 2. MOBILE HAMBURGER DROPDOWN DRAW NAVIGATION ENGINE (NOW FIXED INSIDE WRAPPER)
+    // ==========================================================================
+    const navToggleBtn = document.getElementById("navToggleBtn");
+    const navMenu = document.getElementById("navMenu");
+    const navMenuLinks = document.querySelectorAll(".nav-menu a");
 
-if (navToggleBtn && navMenu) {
-    // Toggle open state on click
-    navToggleBtn.addEventListener("click", function (event) {
-        event.stopPropagation();
-        navMenu.classList.toggle("open");
+    if (navToggleBtn && navMenu) {
+        // Toggle open state on click
+        navToggleBtn.addEventListener("click", function (event) {
+            event.stopPropagation();
+            navMenu.classList.toggle("open");
 
-        // Switch menu icon to 'X' when open
-        const menuIcon = navToggleBtn.querySelector("i");
-        if (navMenu.classList.contains("open")) {
-            menuIcon.className = "fa-solid fa-xmark";
-        } else {
-            menuIcon.className = "fa-solid fa-bars";
-        }
-    });
-
-    // Hide dropdown panel automatically when a navigation section link is selected
-    navMenuLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            navMenu.classList.remove("open");
-            navToggleBtn.querySelector("i").className = "fa-solid fa-bars";
+            // Switch menu icon to 'X' when open
+            const menuIcon = navToggleBtn.querySelector("i");
+            if (navMenu.classList.contains("open")) {
+                menuIcon.className = "fa-solid fa-xmark";
+            } else {
+                menuIcon.className = "fa-solid fa-bars";
+            }
         });
-    });
 
-    // Hide menu automatically if the user clicks anywhere outside on the blank layout body
-    document.addEventListener("click", function (event) {
-        if (!navMenu.contains(event.target) && event.target !== navToggleBtn) {
-            navMenu.classList.remove("open");
-            navToggleBtn.querySelector("i").className = "fa-solid fa-bars";
-        }
-    });
-}
+        // Hide dropdown panel automatically when a navigation section link is selected
+        navMenuLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                navMenu.classList.remove("open");
+                navToggleBtn.querySelector("i").className = "fa-solid fa-bars";
+            });
+        });
+
+        // Hide menu automatically if the user clicks anywhere outside on the blank layout body
+        document.addEventListener("click", function (event) {
+            if (!navMenu.contains(event.target) && event.target !== navToggleBtn) {
+                navMenu.classList.remove("open");
+                navToggleBtn.querySelector("i").className = "fa-solid fa-bars";
+            }
+        });
+    }
+}); // Ends the wrapper layout securely
