@@ -585,7 +585,7 @@ footer {
 
 .mobile-hire-link {
     display: none;
-    /* Hides the dropdown style version of Hire Me on desktops */
+    /* Hides the inline dropdown version of Hire Me on desktops */
 }
 
 .desktop-hire-btn {
@@ -594,6 +594,7 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
 
 /* ==========================================================================
    MOBILE DEVICES MEDIA QUERY BREAKPOINT (Android & iOS Optimization)
