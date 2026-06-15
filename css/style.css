@@ -1,0 +1,750 @@
+/* RESET RULES & GLOBAL SETUP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    /* Enables elegant jumping from navbar anchors */
+}
+
+body {
+    background-color: #080c14;
+    color: #ffffff;
+    padding: 0 8%;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    /* Changed from 15px 0 to keep text links balanced parallel with large images */
+    height: 110px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    /* Forces the logo container to stay perfectly within the navbar limits */
+    width: auto;
+}
+
+/* Logo Picture Styling - Large & Stable */
+.logo-img {
+    height: 180px;
+    /* Increased from 45px to make it noticeably larger and clearer */
+    width: auto;
+    /* Automatically calculates the exact width to prevent stretching */
+    display: block;
+    object-fit: contain;
+    /* Keeps your image proportions crisp and uncropped */
+}
+
+nav a {
+    color: #a5b4fc;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* Fixes the behavior of the Hire Me anchor link button mapping */
+#hireBtn:hover {
+    color: #ffffff;
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* BUTTONS & LINKS */
+button {
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-hire {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+.btn-primary {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin-right: 15px;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid #334155;
+    padding: 12px 24px;
+}
+
+/* Base class for our new brand links */
+.btn-link {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 6px;
+    margin-right: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* Spaces out the logo icon and text */
+    transition: 0.3s;
+}
+
+/* Official Branding Colors */
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+.btn-linkedin {
+    background-color: #0077B5;
+    color: white;
+}
+
+/* Global Button Interactive Hovers */
+button:hover,
+.btn-link:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+}
+
+.hero-text {
+    max-width: 55%;
+}
+
+.hero-text h3 {
+    color: #94a3b8;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 5px;
+}
+
+.highlight {
+    color: #6366f1;
+}
+
+.hero-text h2 {
+    color: #94a3b8;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+}
+
+.hero-image img {
+    width: 320px;
+    height: 320px;
+    border-radius: 20px;
+    object-fit: cover;
+    background: linear-gradient(45deg, #1e1b4b, #311042);
+    padding: 5px;
+}
+
+/* ABOUT & SKILLS */
+.about-skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.section-subtitle {
+    color: #6366f1;
+    font-size: 12px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-box,
+.skills-box {
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1;
+}
+
+/* Target element offsets to align smooth scroll cleanly below navbar */
+#resume,
+#contact {
+    scroll-margin-top: 30px;
+}
+
+.about-box p {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.contact-info i {
+    color: #6366f1;
+    margin-right: 10px;
+    width: 15px;
+}
+
+/* SKILLS GRID */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-card {
+    background-color: #1e293b;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90px;
+}
+
+.skill-card i {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+/* PROJECTS SECTION */
+.projects-section {
+    padding: 60px 0;
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+}
+
+.project-img-placeholder {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    height: 150px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    font-weight: bold;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.project-card p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.live-demo {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.live-demo i {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* STATS FOOTER */
+.stats-footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #0f172a;
+    border-top: 1px solid #1e293b;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-radius: 12px 12px 0 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.stat-item p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+footer {
+
+    text-align: center;
+
+    padding: 40px;
+
+    background: #010713;
+
+}
+
+
+
+/* 2. GRAPHIC GALLERY VISUAL HOVERS */
+.graphics-section {
+    padding: 60px 0;
+}
+
+.graphics-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.graphics-header {
+    margin-bottom: 30px;
+}
+
+.graphics-card {
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 15px;
+    flex: 1;
+    min-width: 280px;
+    transition: transform 0.3s ease;
+}
+
+.graphics-card:hover {
+    transform: translateY(-5px);
+}
+
+.graphics-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #1e293b;
+}
+
+.graphics-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.graphics-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 102, 241, 0.85);
+    /* Purple theme overlay veil mask */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.graphics-category {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid #ffffff;
+    padding: 6px 14px;
+    border-radius: 4px;
+}
+
+.graphics-card:hover .graphics-overlay {
+    opacity: 1;
+}
+
+.graphics-card:hover .graphics-img {
+    transform: scale(1.08);
+}
+
+
+/* 3. POPUP LIGHTBOX IMAGE DIALOG MODAL */
+.lightbox-modal {
+    display: none;
+    /* Hidden by default layout status */
+    position: fixed;
+    z-index: 9999;
+    /* Forces popup card safely on top of the navbar image rules */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 12, 20, 0.96);
+    /* Back drop shadow screen shield mask */
+    justify-content: center;
+    align-items: center;
+}
+
+/* JavaScript triggers this active layout status state */
+.lightbox-modal.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 85%;
+    max-height: 80%;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.25);
+    object-fit: contain;
+    animation: zoomIn 0.3s ease-out;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #94a3b8;
+    font-size: 44px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.lightbox-close:hover {
+    color: #ffffff;
+}
+
+
+/* GLOBAL INTERACTION KEYFRAME ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.94);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   CONTACT FORM THEME CONFIGURATION
+   ========================================================================== */
+
+.contact-form-section {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form-container {
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 650px;
+}
+
+.contact-desc {
+    color: #94a3b8;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.2);
+}
+
+.form-submit-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 0;
+}
+
+/* ==========================================================================
+   GLOBAL DESKTOP CONFIGURATIONS (Hides mobile elements initially)
+   ========================================================================== */
+.nav-toggle {
+    display: none;
+    /* Keeps hamburger hidden on desktop computers */
+}
+
+.mobile-hire-link {
+    display: none;
+    /* Keeps inline list button version hidden on desktop panels */
+}
+
+.desktop-hire-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   MOBILE DEVICES MEDIA QUERY BREAKPOINT (Android & iOS Optimization)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+
+    body {
+        padding: 0 4%;
+        /* Safe content gutters for mobile screen tracking boundaries */
+        overflow-x: hidden;
+        /* Strictly locks out horizontal site breaking wobble shifts */
+    }
+
+    /* 1. INTERACTIVE HAMBURGER TOGGLER NAVIGATION */
+    .navbar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+    }
+
+    .nav-toggle {
+        display: block !important;
+        /* FORCES the hamburger lines to become visible on phone screens */
+        background: transparent;
+        border: none;
+        color: #ffffff;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    .desktop-hire-btn {
+        display: none;
+        /* Hides raw desktop layout button from the mobile header bar */
+    }
+
+    .mobile-hire-link {
+        display: block;
+        /* Unveils your signature purple contact link inside dropdown stack */
+        color: #6366f1 !important;
+        font-weight: bold;
+    }
+
+    /* Sliding Dropdown Drawer Element Container */
+    .nav-menu {
+        display: none;
+        /* Latched closed safely by default framework status */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #0f172a;
+        /* Solid dark background matches profile dashboard look */
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        padding: 20px;
+        z-index: 1000;
+        gap: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Trigger Class added instantly by your script.js event handler */
+    .nav-menu.open {
+        display: flex;
+        animation: slideMenuDown 0.25s ease-in-out;
+    }
+
+    .nav-menu a {
+        margin: 0;
+        padding: 12px;
+        width: 100%;
+        font-size: 16px;
+        border-bottom: 1px solid #1e293b;
+    }
+
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+
+    /* 2. PROFILE HERO AREA ADJUSTMENT */
+    .hero {
+        flex-direction: column-reverse;
+        /* Stacks text on top, avatar graphics gracefully below */
+        text-align: center;
+        padding: 30px 0;
+        gap: 25px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        width: 250px;
+        /* Trimmed sizing dimensions sit neatly on smartphones */
+        height: 250px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn-link {
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    /* 3. ONE-AFTER-THE-OTHER VERTICAL PROJECT STACKING */
+    .projects-container,
+    .graphics-container {
+        display: flex;
+        flex-direction: column;
+        /* Linearly lists card decks down the viewport monitor track */
+        gap: 25px;
+        width: 100%;
+    }
+
+    .project-card,
+    .graphics-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .project-img-placeholder {
+        height: 140px;
+        /* Compact placeholder card scaling balances screen space layout */
+    }
+
+    /* 4. SKILLS CONTAINER SYSTEM SHIFT */
+    .about-skills-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+
+/* Slide Dropdown Animation Frame */
+@keyframes slideMenuDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
