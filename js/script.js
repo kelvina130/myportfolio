@@ -1,34 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // === TARGET SELECTORS FOR IMAGES ===
+    // === 1. IMAGE LIGHTBOX CLICK VIEWPORT ZOOM POPUP ENGINE ===
     const graphicsLinks = document.querySelectorAll(".graphics-link");
     const lightboxModal = document.getElementById("graphicsModal");
     const modalTargetImg = document.getElementById("modalTargetImg");
     const lightboxClose = document.querySelector(".lightbox-close");
 
-    // ==========================================================================
-    // 1. IMAGE LIGHTBOX CLICK POPUP ENGINE
-    // ==========================================================================
     if (graphicsLinks.length > 0 && lightboxModal && modalTargetImg) {
-
         graphicsLinks.forEach(link => {
             link.addEventListener("click", function (event) {
-                // Completely stops the page from flashing or snapping back to home view
                 event.preventDefault();
-                event.stopPropagation();
-
-                // Fetch the unique image file path from your card
+                event.stopPropagation(); // Blocks background track navigation shifts
                 const targetedGraphicUrl = this.getAttribute("data-img");
-
-                // Inject the image source right into the popup modal frame
                 modalTargetImg.src = targetedGraphicUrl;
-
-                // Activate the visibility class styles to show the overlay box
                 lightboxModal.classList.add("active");
             });
         });
 
-        // Click the 'X' button layout to safely hide the overlay
         if (lightboxClose) {
             lightboxClose.addEventListener("click", function (event) {
                 event.preventDefault();
@@ -36,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // Close the popup dynamically if you click anywhere on the dark backdrop boundary spaces
         lightboxModal.addEventListener("click", function (event) {
             if (event.target === lightboxModal) {
                 lightboxModal.classList.remove("active");
@@ -44,20 +31,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================================
-    // 2. MOBILE HAMBURGER DROPDOWN DRAW NAVIGATION ENGINE (NOW FIXED INSIDE WRAPPER)
-    // ==========================================================================
+
+    // === 2. RESPONSIVE MOBILE HAMBURGER DROPDOWN DRAW NAVIGATION ENGINE ===
     const navToggleBtn = document.getElementById("navToggleBtn");
     const navMenu = document.getElementById("navMenu");
     const navMenuLinks = document.querySelectorAll(".nav-menu a");
 
     if (navToggleBtn && navMenu) {
-        // Toggle open state on click
+        // Handle toggling menu panel drawer open or shut state
         navToggleBtn.addEventListener("click", function (event) {
             event.stopPropagation();
             navMenu.classList.toggle("open");
 
-            // Switch menu icon to 'X' when open
+            // Change icon indicator dynamically to 'X' mark symbol when active
             const menuIcon = navToggleBtn.querySelector("i");
             if (navMenu.classList.contains("open")) {
                 menuIcon.className = "fa-solid fa-xmark";
@@ -66,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Hide dropdown panel automatically when a navigation section link is selected
+        // Automatically slide panel away as soon as an inner anchor option link is clicked
         navMenuLinks.forEach(link => {
             link.addEventListener("click", function () {
                 navMenu.classList.remove("open");
@@ -74,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // Hide menu automatically if the user clicks anywhere outside on the blank layout body
+        // Retract panel dropdown safely if client taps anywhere else out on the blank site layout background
         document.addEventListener("click", function (event) {
             if (!navMenu.contains(event.target) && event.target !== navToggleBtn) {
                 navMenu.classList.remove("open");
@@ -82,4 +68,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-}); // Ends the wrapper layout securely
+});
