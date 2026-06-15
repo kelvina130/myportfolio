@@ -19,10 +19,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 0;
+    /* Changed from 15px 0 to keep text links balanced parallel with large images */
     height: 110px;
-    /* Increased from 80px to give your larger logo plenty of room */
 }
+
 
 .logo {
     display: flex;
@@ -619,8 +620,8 @@ footer {
     }
 
     .nav-toggle {
-        display: block;
-        /* Reveals menu toggle button ONLY on mobile screens! */
+        display: block !important;
+        /* FORCES mobile engines to display your hamburger icon button */
         background: transparent;
         border: none;
         color: #ffffff;
