@@ -577,16 +577,16 @@ footer {
 }
 
 /* ==========================================================================
-   GLOBAL DESKTOP CONFIGURATIONS (Hides mobile assets initially)
+   GLOBAL DESKTOP CONFIGURATIONS (Hides mobile elements initially)
    ========================================================================== */
 .nav-toggle {
     display: none;
-    /* Hides the hamburger toggle entirely on desktops! */
+    /* Keeps hamburger hidden on desktop computers */
 }
 
 .mobile-hire-link {
     display: none;
-    /* Hides the inline dropdown version of Hire Me on desktops */
+    /* Keeps inline list button version hidden on desktop panels */
 }
 
 .desktop-hire-btn {
@@ -596,7 +596,6 @@ footer {
     justify-content: center;
 }
 
-
 /* ==========================================================================
    MOBILE DEVICES MEDIA QUERY BREAKPOINT (Android & iOS Optimization)
    ========================================================================== */
@@ -604,9 +603,9 @@ footer {
 
     body {
         padding: 0 4%;
-        /* Safe text boundaries on tiny mobile monitors */
+        /* Safe content gutters for mobile screen tracking boundaries */
         overflow-x: hidden;
-        /* Stops horizontal screen layout breaking shifts */
+        /* Strictly locks out horizontal site breaking wobble shifts */
     }
 
     /* 1. INTERACTIVE HAMBURGER TOGGLER NAVIGATION */
@@ -616,12 +615,11 @@ footer {
         justify-content: space-between;
         align-items: center;
         height: 90px;
-        /* Locked height preserves structural balance */
     }
 
     .nav-toggle {
         display: block !important;
-        /* FORCES mobile engines to display your hamburger icon button */
+        /* FORCES the hamburger lines to become visible on phone screens */
         background: transparent;
         border: none;
         color: #ffffff;
@@ -631,28 +629,27 @@ footer {
 
     .desktop-hire-btn {
         display: none;
-        /* Hides raw desktop header layout button completely on phone viewports */
+        /* Hides raw desktop layout button from the mobile header bar */
     }
 
     .mobile-hire-link {
         display: block;
-        /* Reveals link block inside dropdown on phones */
+        /* Unveils your signature purple contact link inside dropdown stack */
         color: #6366f1 !important;
-        /* Highlights Hire Me with your brand accent color */
         font-weight: bold;
     }
 
-    /* Hidden Dropdown Panel Styles */
+    /* Sliding Dropdown Drawer Element Container */
     .nav-menu {
         display: none;
-        /* Hidden by default until activated */
+        /* Latched closed safely by default framework status */
         flex-direction: column;
         width: 100%;
         position: absolute;
         top: 100%;
         left: 0;
         background-color: #0f172a;
-        /* Solid dark blue container color matches template look */
+        /* Solid dark background matches profile dashboard look */
         border: 1px solid #1e293b;
         border-radius: 8px;
         padding: 20px;
@@ -661,7 +658,7 @@ footer {
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
 
-    /* Activated Toggle State Style Rule */
+    /* Trigger Class added instantly by your script.js event handler */
     .nav-menu.open {
         display: flex;
         animation: slideMenuDown 0.25s ease-in-out;
@@ -682,7 +679,7 @@ footer {
     /* 2. PROFILE HERO AREA ADJUSTMENT */
     .hero {
         flex-direction: column-reverse;
-        /* Stacks introduction description over avatar safely */
+        /* Stacks text on top, avatar graphics gracefully below */
         text-align: center;
         padding: 30px 0;
         gap: 25px;
@@ -694,7 +691,7 @@ footer {
 
     .hero-image img {
         width: 250px;
-        /* Trimmed sizing scales smoothly inside smartphone frames */
+        /* Trimmed sizing dimensions sit neatly on smartphones */
         height: 250px;
     }
 
@@ -715,7 +712,7 @@ footer {
     .graphics-container {
         display: flex;
         flex-direction: column;
-        /* Organizes all cards linearly one below the other */
+        /* Linearly lists card decks down the viewport monitor track */
         gap: 25px;
         width: 100%;
     }
@@ -723,23 +720,23 @@ footer {
     .project-card,
     .graphics-card {
         width: 100%;
-        /* Spans full horizontal track width without clipping */
         box-sizing: border-box;
     }
 
     .project-img-placeholder {
         height: 140px;
-        /* Reduced proportions make cards clean and compact */
+        /* Compact placeholder card scaling balances screen space layout */
     }
 
-    /* 4. SKILLS CONTAINER GRID FLEX */
+    /* 4. SKILLS CONTAINER SYSTEM SHIFT */
     .about-skills-container {
         flex-direction: column;
         gap: 30px;
     }
 }
 
-/* Slide Dropdown Entrance Keyframes Animation */
+
+/* Slide Dropdown Animation Frame */
 @keyframes slideMenuDown {
     from {
         opacity: 0;
