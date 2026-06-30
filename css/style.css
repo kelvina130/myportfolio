@@ -349,8 +349,35 @@ footer {
     background: #010713;
 
 }
+ /* ==========================================================================
+   SKILLS GRID BRAND ICON COLORS
+   ========================================================================== */
+.icon-html {
+    color: #E34F26; /* Official HTML5 Orange */
+}
 
+.icon-css {
+    color: #1572B6; /* Official CSS3 Blue */
+}
 
+.icon-js {
+    color: #F7DF1E; /* Official JavaScript Yellow */
+}
+
+.icon-mobile-design {
+    color: #a855f7; /* Custom Theme Bright Purple */
+}
+
+.icon-git {
+    color: #F05032; /* Official Git Red-Orange */
+}
+
+/* ==========================================================================
+   CONTACT FORM HONEYPOT (Hides spam-bot fields from view)
+   ========================================================================== */
+.form-honeypot {
+    display: none !important;
+}
 
 /* 2. GRAPHIC GALLERY VISUAL HOVERS */
 .graphics-section {
@@ -429,7 +456,63 @@ footer {
 .graphics-card:hover .graphics-img {
     transform: scale(1.08);
 }
+/* ==========================================================================
+   EXPANDABLE GALLERY ROW STYLES
+   ========================================================================== */
+.graphics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
 
+.view-all-graphics-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Hidden Extra Rows Layout Container */
+.graphics-extra-grid {
+    display: none; /* Invisible by default */
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Separates the extra images perfectly below the first row */
+    width: 100%;
+}
+
+/* Revealed row state triggered via JS class tracking */
+.graphics-extra-grid.reveal {
+    display: flex;
+    animation: zoomGalleryIn 0.25s ease-out;
+}
+
+/* Phone Layout Alignment Matrix */
+@media screen and (max-width: 768px) {
+    .graphics-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .view-all-graphics-btn {
+        width: 100%; /* Spans full horizontal bounds on Android/iOS screen frames */
+    }
+    
+    .graphics-extra-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+@keyframes zoomGalleryIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
 
 /* 3. POPUP LIGHTBOX IMAGE DIALOG MODAL */
 .lightbox-modal {
