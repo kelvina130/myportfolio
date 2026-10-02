@@ -28,14 +28,14 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 80%;
     /* Forces the logo container to stay perfectly within the navbar limits */
     width: auto;
 }
 
 /* Logo Picture Styling - Large & Stable */
 .logo-img {
-    height: 100px;
+    height: 50px;
     /* Increased from 45px to make it noticeably larger and clearer */
     width: auto;
     /* Automatically calculates the exact width to prevent stretching */
