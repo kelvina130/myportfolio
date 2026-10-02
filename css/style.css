@@ -35,7 +35,7 @@ body {
 
 /* Logo Picture Styling - Large & Stable */
 .logo-img {
-    height: 180px;
+    height: 100px;
     /* Increased from 45px to make it noticeably larger and clearer */
     width: auto;
     /* Automatically calculates the exact width to prevent stretching */
