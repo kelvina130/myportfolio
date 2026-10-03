@@ -332,6 +332,27 @@ button:hover,
     margin-left: 5px;
 }
 
+/* Interactive button styling for play/pause live demo trigger */
+button.live-demo {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+    color: #3b82f6;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+button.live-demo:hover {
+    color: #60a5fa;
+    transform: none;
+    box-shadow: none;
+}
+
 /* STATS FOOTER */
 .stats-footer {
     display: flex;
@@ -404,6 +425,10 @@ footer {
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+.graphics-header {
+    margin-bottom: 30px;
 }
 
 .graphics-card {
