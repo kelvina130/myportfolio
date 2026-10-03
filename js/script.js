@@ -90,3 +90,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+// ==========================================================================
+    // PLAY VIDEO ON "LIVE DEMO" CLICK
+    // ==========================================================================
+    const liveDemoButtons = document.querySelectorAll(".project-card .live-demo");
+
+    liveDemoButtons.forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevents the page from jumping to top
+
+            // Find the video inside the same project card
+            const projectCard = this.closest(".project-card");
+            const video = projectCard.querySelector(".project-video");
+
+            if (video) {
+                if (video.paused) {
+                    // Pause all other project videos first
+                    document.querySelectorAll(".project-video").forEach(v => {
+                        if (v !== video) v.pause();
+                    });
+
+                    video.play();
+                    this.innerHTML = 'Pause Demo <i class="fa-solid fa-pause"></i>';
+                } else {
+                    video.pause();
+                    this.innerHTML = 'Live Demo <i class="fa-solid fa-arrow-right"></i>';
+                }
+            }
+        });
+    });
