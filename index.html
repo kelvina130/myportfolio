@@ -54,7 +54,6 @@
         </div>
     </section>
 
-
     <section class="about-skills-container">
         <div class="about-box">
             <span class="section-subtitle">ABOUT ME</span>
@@ -74,9 +73,6 @@
                 digital solutions.
 
                 My goal is to bring creativity, innovation, and quality into every project I work on.</p>
-
-
-
         </div>
 
         <div id="resume" class="skills-box">
@@ -110,54 +106,54 @@
         </div>
     </section>
 
-  <section id="projects" class="projects-section">
-    <div class="projects-header">
-        <div>
-            <span class="section-subtitle">PROJECTS</span>
-            <h2>My Projects</h2>
-        </div>
-        <button class="btn-secondary">View All Projects</button>
-    </div>
-
-    <div class="projects-container">
-        <!-- Project 1 -->
-        <div class="project-card">
-            <div class="project-video-wrapper">
-                <img src="image/ledges.jpeg" alt="E-Commerce Website" class="graphics-img">
+    <section id="projects" class="projects-section">
+        <div class="projects-header">
+            <div>
+                <span class="section-subtitle">PROJECTS</span>
+                <h2>My Projects</h2>
             </div>
-            <h3>E-Commerce Website</h3>
-            <p>A responsive e-commerce website built with React and Tailwind CSS.</p>
-            <button type="button" class="live-demo" data-video="video/ledges-video.mp4">
-                Live Demo <i class="fa-solid fa-arrow-right"></i>
-            </button>
+            <button class="btn-secondary">View All Projects</button>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-            <div class="project-video-wrapper">
-                <img src="image/Birthday.jpeg" alt="Portfolio Website" class="graphics-img">
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-video-wrapper">
+                    <img src="image/ledges.jpeg" alt="E-Commerce Website" class="graphics-img">
+                </div>
+                <h3>E-Commerce Website</h3>
+                <p>A responsive e-commerce website built with React and Tailwind CSS.</p>
+                <button type="button" class="live-demo" data-video="video/ledges-video.mp4">
+                    Live Demo <i class="fa-solid fa-arrow-right"></i>
+                </button>
             </div>
-            <h3>Portfolio Website</h3>
-            <p>Personal portfolio website to showcase my projects and skills.</p>
-            <button type="button" class="live-demo" data-video="video/portfolio-demo.mp4">
-                Live Demo <i class="fa-solid fa-arrow-right"></i>
-            </button>
-        </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-            <div class="project-video-wrapper">
-                <img src="image/Democracy.jpeg" alt="Task Management App" class="graphics-img">
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-video-wrapper">
+                    <img src="image/Birthday.jpeg" alt="Portfolio Website" class="graphics-img">
+                </div>
+                <h3>Portfolio Website</h3>
+                <p>Personal portfolio website to showcase my projects and skills.</p>
+                <button type="button" class="live-demo" data-video="video/portfolio-demo.mp4">
+                    Live Demo <i class="fa-solid fa-arrow-right"></i>
+                </button>
             </div>
-            <h3>Task Management App</h3>
-            <p>A task management application built with React and Firebase.</p>
-            <button type="button" class="live-demo" data-video="video/taskapp-demo.mp4">
-                Live Demo <i class="fa-solid fa-arrow-right"></i>
-            </button>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-video-wrapper">
+                    <img src="image/Democracy.jpeg" alt="Task Management App" class="graphics-img">
+                </div>
+                <h3>Task Management App</h3>
+                <p>A task management application built with React and Firebase.</p>
+                <button type="button" class="live-demo" data-video="video/taskapp-demo.mp4">
+                    Live Demo <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
         </div>
-    </div>
-</section>
-    
+    </section>
+
     <section id="graphics" class="graphics-section">
         <div class="graphics-header">
             <div>
@@ -245,9 +241,21 @@
         </div>
     </section>
 
+    <!-- GRAPHICS IMAGE MODAL -->
     <div id="graphicsModal" class="lightbox-modal">
         <span class="lightbox-close">&times;</span>
         <img class="lightbox-content" id="modalTargetImg" src="" alt="Enlarged Graphics View">
+    </div>
+
+    <!-- VIDEO POPUP MODAL -->
+    <div id="videoModal" class="lightbox-modal">
+        <span class="lightbox-close video-modal-close">&times;</span>
+        <div class="video-modal-container">
+            <video id="modalTargetVideo" controls playsinline>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
 
     <section id="contact" class="contact-form-section">
