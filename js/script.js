@@ -68,20 +68,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ==========================================================================
-  // GRAPHICS GALLERY DISPLAY EXPANSION ENGINE
+  // 3. GRAPHICS GALLERY DISPLAY EXPANSION ENGINE
   // ==========================================================================
   const viewAllGraphicsBtn = document.getElementById("viewAllGraphicsBtn");
   const graphicsExtraGrid = document.getElementById("graphicsExtraGrid");
 
   if (viewAllGraphicsBtn && graphicsExtraGrid) {
     viewAllGraphicsBtn.addEventListener("click", function (event) {
-      // Stops anchor tags from jumping back to the home/top view
       event.preventDefault();
 
-      // Toggle the visibility layout class
       graphicsExtraGrid.classList.toggle("reveal");
 
-      // Change button labels dynamically based on current visibility state
       if (graphicsExtraGrid.classList.contains("reveal")) {
         viewAllGraphicsBtn.textContent = "Show Less Graphics";
       } else {
@@ -89,33 +86,43 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-});
-// ==========================================================================
-    // PLAY VIDEO ON "LIVE DEMO" CLICK
-    // ==========================================================================
-    const liveDemoButtons = document.querySelectorAll(".project-card .live-demo");
 
-    liveDemoButtons.forEach(button => {
-        button.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevents the page from jumping to top
+  // ==========================================================================
+  // 4. PLAY / PAUSE VIDEO ON "LIVE DEMO" CLICK
+  // ==========================================================================
+  const liveDemoButtons = document.querySelectorAll(".project-card .live-demo");
 
-            // Find the video inside the same project card
-            const projectCard = this.closest(".project-card");
-            const video = projectCard.querySelector(".project-video");
+  liveDemoButtons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevents jumping to #
 
-            if (video) {
-                if (video.paused) {
-                    // Pause all other project videos first
-                    document.querySelectorAll(".project-video").forEach(v => {
-                        if (v !== video) v.pause();
-                    });
+      const projectCard = this.closest(".project-card");
+      const video = projectCard.querySelector(".project-video");
 
-                    video.play();
-                    this.innerHTML = 'Pause Demo <i class="fa-solid fa-pause"></i>';
-                } else {
-                    video.pause();
-                    this.innerHTML = 'Live Demo <i class="fa-solid fa-arrow-right"></i>';
-                }
+      if (video) {
+        if (video.paused) {
+          // Pause all other videos and reset their button text
+          document.querySelectorAll(".project-video").forEach((v) => {
+            if (v !== video) {
+              v.pause();
+              const otherBtn = v.closest(".project-card")?.querySelector(".live-demo");
+              if (otherBtn) {
+                otherBtn.innerHTML = 'Live Demo <i class="fa-solid fa-arrow-right"></i>';
+              }
             }
-        });
+          });
+
+          // Play the selected video
+          video.play().then(() => {
+            this.innerHTML = 'Pause Demo <i class="fa-solid fa-pause"></i>';
+          }).catch((err) => {
+            console.error("Playback error:", err);
+          });
+        } else {
+          video.pause();
+          this.innerHTML = 'Live Demo <i class="fa-solid fa-arrow-right"></i>';
+        }
+      }
     });
+  });
+});
