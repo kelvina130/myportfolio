@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ==========================================================================
-  // 4. PLAY / PAUSE VIDEO ON "LIVE DEMO" CLICK
+  // 4. PLAY / PAUSE VIDEO ON "LIVE DEMO" CLICK (RACE-CONDITION SAFE)
   // ==========================================================================
   const liveDemoButtons = document.querySelectorAll(".project-card .live-demo");
 
@@ -97,31 +97,38 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault(); // Prevents jumping to #
 
       const projectCard = this.closest(".project-card");
-      const video = projectCard.querySelector(".project-video");
+      const targetVideo = projectCard.querySelector(".project-video");
 
-      if (video) {
-        if (video.paused) {
-          // Pause all other videos and reset their button text
-          document.querySelectorAll(".project-video").forEach((v) => {
-            if (v !== video) {
-              v.pause();
-              const otherBtn = v.closest(".project-card")?.querySelector(".live-demo");
-              if (otherBtn) {
-                otherBtn.innerHTML = 'Live Demo <i class="fa-solid fa-arrow-right"></i>';
-              }
+      if (!targetVideo) return;
+
+      if (targetVideo.paused) {
+        // Pause all other project videos cleanly
+        document.querySelectorAll(".project-video").forEach((otherVideo) => {
+          if (otherVideo !== targetVideo && !otherVideo.paused) {
+            otherVideo.pause();
+            const otherBtn = otherVideo.closest(".project-card")?.querySelector(".live-demo");
+            if (otherBtn) {
+              otherBtn.innerHTML = 'Live Demo <i class="fa-solid fa-arrow-right"></i>';
             }
-          });
+          }
+        });
 
-          // Play the selected video
-          video.play().then(() => {
-            this.innerHTML = 'Pause Demo <i class="fa-solid fa-pause"></i>';
-          }).catch((err) => {
-            console.error("Playback error:", err);
-          });
-        } else {
-          video.pause();
-          this.innerHTML = 'Live Demo <i class="fa-solid fa-arrow-right"></i>';
+        // Enforce muted state to satisfy browser autoplay security policies
+        targetVideo.muted = true;
+
+        const playPromise = targetVideo.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              this.innerHTML = 'Pause Demo <i class="fa-solid fa-pause"></i>';
+            })
+            .catch((err) => {
+              console.error("Playback error:", err);
+            });
         }
+      } else {
+        targetVideo.pause();
+        this.innerHTML = 'Live Demo <i class="fa-solid fa-arrow-right"></i>';
       }
     });
   });
