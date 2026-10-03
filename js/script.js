@@ -88,48 +88,44 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ==========================================================================
-  // 4. PLAY / PAUSE VIDEO ON "LIVE DEMO" CLICK (RACE-CONDITION SAFE)
+  // 4. VIDEO POPUP MODAL ENGINE
   // ==========================================================================
   const liveDemoButtons = document.querySelectorAll(".project-card .live-demo");
+  const videoModal = document.getElementById("videoModal");
+  const modalTargetVideo = document.getElementById("modalTargetVideo");
+  const videoModalClose = document.querySelector(".video-modal-close");
 
-  liveDemoButtons.forEach((button) => {
-    button.addEventListener("click", function (event) {
-      event.preventDefault(); // Prevents jumping to #
+  if (videoModal && modalTargetVideo) {
+    liveDemoButtons.forEach((button) => {
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        const videoSrc = this.getAttribute("data-video");
 
-      const projectCard = this.closest(".project-card");
-      const targetVideo = projectCard.querySelector(".project-video");
-
-      if (!targetVideo) return;
-
-      if (targetVideo.paused) {
-        // Pause all other project videos cleanly
-        document.querySelectorAll(".project-video").forEach((otherVideo) => {
-          if (otherVideo !== targetVideo && !otherVideo.paused) {
-            otherVideo.pause();
-            const otherBtn = otherVideo.closest(".project-card")?.querySelector(".live-demo");
-            if (otherBtn) {
-              otherBtn.innerHTML = 'Live Demo <i class="fa-solid fa-arrow-right"></i>';
-            }
-          }
-        });
-
-        // Enforce muted state to satisfy browser autoplay security policies
-        targetVideo.muted = true;
-
-        const playPromise = targetVideo.play();
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              this.innerHTML = 'Pause Demo <i class="fa-solid fa-pause"></i>';
-            })
-            .catch((err) => {
-              console.error("Playback error:", err);
-            });
+        if (videoSrc) {
+          modalTargetVideo.src = videoSrc;
+          videoModal.classList.add("active");
+          modalTargetVideo.play().catch((err) => {
+            console.error("Playback error:", err);
+          });
         }
-      } else {
-        targetVideo.pause();
-        this.innerHTML = 'Live Demo <i class="fa-solid fa-arrow-right"></i>';
+      });
+    });
+
+    const closeVideoModal = () => {
+      videoModal.classList.remove("active");
+      modalTargetVideo.pause();
+      modalTargetVideo.currentTime = 0;
+      modalTargetVideo.src = "";
+    };
+
+    if (videoModalClose) {
+      videoModalClose.addEventListener("click", closeVideoModal);
+    }
+
+    videoModal.addEventListener("click", function (event) {
+      if (event.target === videoModal) {
+        closeVideoModal();
       }
     });
-  });
+  }
 });
