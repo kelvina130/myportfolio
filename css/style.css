@@ -289,7 +289,9 @@ button:hover,
     font-weight: bold;
 }
 
-/* PROJECT VIDEO DEMO WRAPPER & MEDIA */
+/* ==========================================================================
+   PROJECT VIDEO DEMO WRAPPER & MEDIA
+   ========================================================================== */
 .project-video-wrapper {
     width: 100%;
     height: 160px;
@@ -392,7 +394,7 @@ footer {
     display: none !important;
 }
 
-/* 2. GRAPHIC GALLERY VISUAL HOVERS */
+/* GRAPHIC GALLERY VISUAL HOVERS */
 .graphics-section {
     padding: 60px 0;
 }
@@ -500,7 +502,7 @@ footer {
     animation: zoomGalleryIn 0.25s ease-out;
 }
 
-/* 3. POPUP LIGHTBOX IMAGE DIALOG MODAL */
+/* POPUP LIGHTBOX IMAGE DIALOG MODAL */
 .lightbox-modal {
     display: none;
     /* Hidden by default layout status */
@@ -566,6 +568,17 @@ footer {
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes zoomGalleryIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -642,10 +655,10 @@ footer {
 }
 
 /* ==========================================================================
-   GLOBAL DESKTOP CONFIGURATIONS (Desktop layout rules for dropdown & toggler)
+   GLOBAL DESKTOP CONFIGURATIONS (Dropdown & Mobile Navigation System)
    ========================================================================== */
 .menu-trigger-text {
-    display: none; /* Hides dropdown trigger text on desktop */
+    display: none; /* Hides the mobile menu text trigger on desktop */
 }
 
 .dropdown-links {
@@ -654,7 +667,7 @@ footer {
 }
 
 .nav-toggle {
-    display: none; /* Keeps toggler hidden on desktop computers */
+    display: none; /* Keeps hamburger hidden on desktop computers */
 }
 
 .mobile-hire-link {
@@ -675,9 +688,12 @@ footer {
 
     body {
         padding: 0 4%;
+        /* Safe content gutters for mobile screen tracking boundaries */
         overflow-x: hidden;
+        /* Strictly locks out horizontal site breaking wobble shifts */
     }
 
+    /* 1. NAVBAR & DROPDOWN LAYOUT */
     .navbar {
         position: relative;
         display: flex;
@@ -686,33 +702,12 @@ footer {
         height: 90px;
     }
 
-    /* 1. BUTTON & TOGGLER RULES (Retained for JS toggler support) */
-    .nav-toggle {
-        display: block !important;
-        background: transparent;
-        border: none;
-        color: #ffffff;
-        font-size: 26px;
-        cursor: pointer;
-    }
-
     .desktop-hire-btn {
         display: none !important;
+        /* Hides raw desktop layout button from the mobile header bar */
     }
 
-    .mobile-hire-link {
-        display: block !important;
-        color: #6366f1 !important;
-        font-weight: bold;
-    }
-
-    /* JS Sliding Drawer Setup */
-    .nav-menu.open {
-        display: flex;
-        animation: slideMenuDown 0.25s ease-in-out;
-    }
-
-    /* 2. PURE HTML/CSS DROPDOWN MENU EXTENSIONS */
+    /* Pure CSS hover/tap dropdown engine */
     .nav-menu {
         position: relative;
         display: inline-block;
@@ -746,15 +741,13 @@ footer {
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
 
-    /* CSS Hover / Focus Dropdown Trigger */
     .nav-menu:hover .dropdown-links,
     .nav-menu:focus-within .dropdown-links {
         display: flex;
         animation: slideMenuDown 0.2s ease-in-out;
     }
 
-    .dropdown-links a,
-    .nav-menu a {
+    .dropdown-links a {
         display: block;
         width: 100%;
         margin: 0;
@@ -763,14 +756,30 @@ footer {
         border-bottom: 1px solid #1e293b;
     }
 
-    .dropdown-links a:last-child,
-    .nav-menu a:last-child {
+    .dropdown-links a:last-child {
         border-bottom: none;
     }
 
-    /* 3. PROFILE HERO AREA ADJUSTMENT */
+    .nav-toggle {
+        display: block !important;
+        background: transparent;
+        border: none;
+        color: #ffffff;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    .mobile-hire-link {
+        display: block !important;
+        /* Unveils your signature purple contact link inside dropdown stack */
+        color: #6366f1 !important;
+        font-weight: bold;
+    }
+
+    /* 2. PROFILE HERO AREA ADJUSTMENT */
     .hero {
         flex-direction: column-reverse;
+        /* Stacks text on top, avatar graphics gracefully below */
         text-align: center;
         padding: 30px 0;
         gap: 25px;
@@ -782,6 +791,7 @@ footer {
 
     .hero-image img {
         width: 250px;
+        /* Trimmed sizing dimensions sit neatly on smartphones */
         height: 250px;
     }
 
@@ -797,11 +807,12 @@ footer {
         margin-right: 0;
     }
 
-    /* 4. VERTICAL STACKING */
+    /* 3. VERTICAL PROJECT & GRAPHICS STACKING */
     .projects-container,
     .graphics-container {
         display: flex;
         flex-direction: column;
+        /* Linearly lists card decks down the viewport monitor track */
         gap: 25px;
         width: 100%;
     }
@@ -814,9 +825,13 @@ footer {
 
     .project-img-placeholder {
         height: 140px;
+        /* Compact placeholder card scaling balances screen space layout */
     }
 
-    /* 5. GRAPHICS & SKILLS SECTION SHIFTS */
+    .project-video-wrapper {
+        height: 150px;
+    }
+
     .graphics-header {
         flex-direction: column;
         align-items: center;
@@ -825,7 +840,7 @@ footer {
     }
 
     .view-all-graphics-btn {
-        width: 100%;
+        width: 100%; /* Spans full horizontal bounds on Android/iOS screen frames */
     }
 
     .graphics-extra-grid {
@@ -833,13 +848,14 @@ footer {
         gap: 25px;
     }
 
+    /* 4. SKILLS CONTAINER SYSTEM SHIFT */
     .about-skills-container {
         flex-direction: column;
         gap: 30px;
     }
 }
 
-/* Slide Dropdown Animation Frames */
+/* Slide Dropdown Animation Frame */
 @keyframes slideMenuDown {
     from {
         opacity: 0;
@@ -848,16 +864,5 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes zoomGalleryIn {
-    from {
-        opacity: 0;
-        transform: scale(0.98);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
     }
 }
