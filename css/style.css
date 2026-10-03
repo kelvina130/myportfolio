@@ -332,7 +332,7 @@ button:hover,
     margin-left: 5px;
 }
 
-/* Interactive button styling for play/pause live demo trigger */
+/* Interactive button styling for live demo trigger */
 button.live-demo {
     background: transparent;
     border: none;
@@ -527,7 +527,7 @@ footer {
     animation: zoomGalleryIn 0.25s ease-out;
 }
 
-/* POPUP LIGHTBOX IMAGE DIALOG MODAL */
+/* POPUP LIGHTBOX IMAGE & VIDEO MODAL DIALOG */
 .lightbox-modal {
     display: none;
     /* Hidden by default layout status */
@@ -567,10 +567,32 @@ footer {
     font-weight: bold;
     cursor: pointer;
     transition: color 0.2s;
+    user-select: none;
 }
 
 .lightbox-close:hover {
     color: #ffffff;
+}
+
+/* ==========================================================================
+   VIDEO MODAL POPUP DIALOG STYLING
+   ========================================================================== */
+.video-modal-container {
+    max-width: 85%;
+    max-height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: zoomIn 0.3s ease-out;
+}
+
+#modalTargetVideo {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.25);
+    background-color: #000;
+    outline: none;
 }
 
 /* GLOBAL INTERACTION KEYFRAME ANIMATIONS */
