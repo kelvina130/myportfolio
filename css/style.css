@@ -1,12 +1,11 @@
-/* ==========================================================================
-   RESET RULES & GLOBAL SETUP
-   ========================================================================== */
+/* RESET RULES & GLOBAL SETUP */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
+    /* Enables elegant jumping from navbar anchors */
 }
 
 body {
@@ -15,14 +14,13 @@ body {
     padding: 0 8%;
 }
 
-/* ==========================================================================
-   NAVBAR & NAVIGATION SYSTEM
-   ========================================================================== */
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0;
+    /* Changed from 15px 0 to keep text links balanced parallel with large images */
     height: 110px;
 }
 
@@ -30,28 +28,21 @@ body {
     display: flex;
     align-items: center;
     height: 80%;
+    /* Forces the logo container to stay perfectly within the navbar limits */
     width: auto;
 }
 
+/* Logo Picture Styling - Large & Stable */
 .logo-img {
     height: 50px;
+    /* Increased from 45px to make it noticeably larger and clearer */
     width: auto;
+    /* Automatically calculates the exact width to prevent stretching */
     display: block;
     object-fit: contain;
+    /* Keeps your image proportions crisp and uncropped */
 }
 
-/* Desktop Navigation Menu Links */
-.menu-trigger-text {
-    display: none; /* Hidden on desktop viewports */
-}
-
-.dropdown-links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.dropdown-links a,
 nav a {
     color: #a5b4fc;
     text-decoration: none;
@@ -60,31 +51,18 @@ nav a {
     transition: color 0.3s;
 }
 
-.dropdown-links a:hover,
 nav a:hover {
     color: #ffffff;
 }
 
-.mobile-hire-link {
-    display: none; /* Hidden on desktop viewports */
-}
-
-.desktop-hire-btn {
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
+/* Fixes the behavior of the Hire Me anchor link button mapping */
 #hireBtn:hover {
     color: #ffffff;
     opacity: 0.9;
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   BUTTONS & BRAND LINKS
-   ========================================================================== */
+/* BUTTONS & LINKS */
 button {
     cursor: pointer;
     border-radius: 6px;
@@ -114,6 +92,7 @@ button {
     padding: 12px 24px;
 }
 
+/* Base class for our new brand links */
 .btn-link {
     text-decoration: none;
     font-weight: 600;
@@ -123,9 +102,11 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    /* Spaces out the logo icon and text */
     transition: 0.3s;
 }
 
+/* Official Branding Colors */
 .btn-whatsapp {
     background-color: #25D366;
     color: white;
@@ -136,6 +117,7 @@ button {
     color: white;
 }
 
+/* Global Button Interactive Hovers */
 button:hover,
 .btn-link:hover {
     opacity: 0.9;
@@ -143,9 +125,7 @@ button:hover,
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
 }
 
-/* ==========================================================================
-   HERO SECTION
-   ========================================================================== */
+/* HERO SECTION */
 .hero {
     display: flex;
     align-items: center;
@@ -197,9 +177,7 @@ button:hover,
     padding: 5px;
 }
 
-/* ==========================================================================
-   ABOUT & RESUME / SKILLS
-   ========================================================================== */
+/* ABOUT & SKILLS */
 .about-skills-container {
     display: flex;
     justify-content: space-between;
@@ -224,6 +202,7 @@ button:hover,
     flex: 1;
 }
 
+/* Target element offsets to align smooth scroll cleanly below navbar */
 #resume,
 #contact {
     scroll-margin-top: 30px;
@@ -235,6 +214,18 @@ button:hover,
     margin-bottom: 20px;
 }
 
+.contact-info p {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.contact-info i {
+    color: #6366f1;
+    margin-right: 10px;
+    width: 15px;
+}
+
+/* SKILLS GRID */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -260,29 +251,7 @@ button:hover,
     color: #cbd5e1;
 }
 
-.icon-html {
-    color: #E34F26;
-}
-
-.icon-css {
-    color: #1572B6;
-}
-
-.icon-js {
-    color: #F7DF1E;
-}
-
-.icon-mobile-design {
-    color: #a855f7;
-}
-
-.icon-git {
-    color: #F05032;
-}
-
-/* ==========================================================================
-   PROJECTS SECTION & VIDEO DEMOS
-   ========================================================================== */
+/* PROJECTS SECTION */
 .projects-section {
     padding: 60px 0;
 }
@@ -320,7 +289,7 @@ button:hover,
     font-weight: bold;
 }
 
-/* Video Demo Wrapper Styling */
+/* PROJECT VIDEO DEMO WRAPPER & MEDIA */
 .project-video-wrapper {
     width: 100%;
     height: 160px;
@@ -361,26 +330,71 @@ button:hover,
     margin-left: 5px;
 }
 
+/* STATS FOOTER */
+.stats-footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #0f172a;
+    border-top: 1px solid #1e293b;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-radius: 12px 12px 0 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.stat-item p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #010713;
+}
+
 /* ==========================================================================
-   GRAPHICS GALLERY & VIEW ALL ROW
+   SKILLS GRID BRAND ICON COLORS
    ========================================================================== */
+.icon-html {
+    color: #E34F26; /* Official HTML5 Orange */
+}
+
+.icon-css {
+    color: #1572B6; /* Official CSS3 Blue */
+}
+
+.icon-js {
+    color: #F7DF1E; /* Official JavaScript Yellow */
+}
+
+.icon-mobile-design {
+    color: #a855f7; /* Custom Theme Bright Purple */
+}
+
+.icon-git {
+    color: #F05032; /* Official Git Red-Orange */
+}
+
+/* ==========================================================================
+   CONTACT FORM HONEYPOT (Hides spam-bot fields from view)
+   ========================================================================== */
+.form-honeypot {
+    display: none !important;
+}
+
+/* 2. GRAPHIC GALLERY VISUAL HOVERS */
 .graphics-section {
     padding: 60px 0;
-}
-
-.graphics-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 30px;
-}
-
-.view-all-graphics-btn {
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
 }
 
 .graphics-container {
@@ -427,6 +441,7 @@ button:hover,
     width: 100%;
     height: 100%;
     background: rgba(99, 102, 241, 0.85);
+    /* Purple theme overlay veil mask */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -451,37 +466,58 @@ button:hover,
     transform: scale(1.08);
 }
 
+/* ==========================================================================
+   EXPANDABLE GALLERY ROW STYLES
+   ========================================================================== */
+.graphics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.view-all-graphics-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 /* Hidden Extra Rows Layout Container */
 .graphics-extra-grid {
-    display: none;
+    display: none; /* Invisible by default */
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 20px; /* Separates the extra images perfectly below the first row */
     width: 100%;
 }
 
+/* Revealed row state triggered via JS class tracking */
 .graphics-extra-grid.reveal {
     display: flex;
     animation: zoomGalleryIn 0.25s ease-out;
 }
 
-/* ==========================================================================
-   POPUP LIGHTBOX MODAL
-   ========================================================================== */
+/* 3. POPUP LIGHTBOX IMAGE DIALOG MODAL */
 .lightbox-modal {
     display: none;
+    /* Hidden by default layout status */
     position: fixed;
     z-index: 9999;
+    /* Forces popup card safely on top of the navbar image rules */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(8, 12, 20, 0.96);
+    /* Back drop shadow screen shield mask */
     justify-content: center;
     align-items: center;
 }
 
+/* JavaScript triggers this active layout status state */
 .lightbox-modal.active {
     display: flex;
 }
@@ -510,13 +546,32 @@ button:hover,
     color: #ffffff;
 }
 
-/* ==========================================================================
-   CONTACT FORM & HONEYPOT
-   ========================================================================== */
-.form-honeypot {
-    display: none !important;
+/* GLOBAL INTERACTION KEYFRAME ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+@keyframes zoomIn {
+    from {
+        transform: scale(0.94);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   CONTACT FORM THEME CONFIGURATION
+   ========================================================================== */
 .contact-form-section {
     padding: 60px 0;
     display: flex;
@@ -587,52 +642,34 @@ button:hover,
 }
 
 /* ==========================================================================
-   FOOTER
+   GLOBAL DESKTOP CONFIGURATIONS (Desktop layout rules for dropdown & toggler)
    ========================================================================== */
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #010713;
+.menu-trigger-text {
+    display: none; /* Hides dropdown trigger text on desktop */
+}
+
+.dropdown-links {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-toggle {
+    display: none; /* Keeps toggler hidden on desktop computers */
+}
+
+.mobile-hire-link {
+    display: none; /* Keeps inline list button version hidden on desktop panels */
+}
+
+.desktop-hire-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ==========================================================================
-   KEYFRAME ANIMATIONS
-   ========================================================================== */
-@keyframes slideMenuDown {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.94);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes zoomGalleryIn {
-    from {
-        opacity: 0;
-        transform: scale(0.98);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* ==========================================================================
-   MOBILE DEVICES MEDIA QUERY BREAKPOINT (max-width: 768px)
+   MOBILE DEVICES MEDIA QUERY BREAKPOINT (Android & iOS Optimization)
    ========================================================================== */
 @media screen and (max-width: 768px) {
 
@@ -649,11 +686,33 @@ footer {
         height: 90px;
     }
 
+    /* 1. BUTTON & TOGGLER RULES (Retained for JS toggler support) */
+    .nav-toggle {
+        display: block !important;
+        background: transparent;
+        border: none;
+        color: #ffffff;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
     .desktop-hire-btn {
         display: none !important;
     }
 
-    /* PURE CSS HOVER/TAP DROPDOWN ENGINE */
+    .mobile-hire-link {
+        display: block !important;
+        color: #6366f1 !important;
+        font-weight: bold;
+    }
+
+    /* JS Sliding Drawer Setup */
+    .nav-menu.open {
+        display: flex;
+        animation: slideMenuDown 0.25s ease-in-out;
+    }
+
+    /* 2. PURE HTML/CSS DROPDOWN MENU EXTENSIONS */
     .nav-menu {
         position: relative;
         display: inline-block;
@@ -687,13 +746,15 @@ footer {
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
 
+    /* CSS Hover / Focus Dropdown Trigger */
     .nav-menu:hover .dropdown-links,
     .nav-menu:focus-within .dropdown-links {
         display: flex;
         animation: slideMenuDown 0.2s ease-in-out;
     }
 
-    .dropdown-links a {
+    .dropdown-links a,
+    .nav-menu a {
         display: block;
         width: 100%;
         margin: 0;
@@ -702,17 +763,12 @@ footer {
         border-bottom: 1px solid #1e293b;
     }
 
-    .dropdown-links a:last-child {
+    .dropdown-links a:last-child,
+    .nav-menu a:last-child {
         border-bottom: none;
     }
 
-    .mobile-hire-link {
-        display: block !important;
-        color: #6366f1 !important;
-        font-weight: bold;
-    }
-
-    /* Profile Hero Stacking */
+    /* 3. PROFILE HERO AREA ADJUSTMENT */
     .hero {
         flex-direction: column-reverse;
         text-align: center;
@@ -725,8 +781,8 @@ footer {
     }
 
     .hero-image img {
-        width: 240px;
-        height: 240px;
+        width: 250px;
+        height: 250px;
     }
 
     .hero-buttons {
@@ -741,7 +797,7 @@ footer {
         margin-right: 0;
     }
 
-    /* Vertical Stacking for Containers */
+    /* 4. VERTICAL STACKING */
     .projects-container,
     .graphics-container {
         display: flex;
@@ -756,28 +812,52 @@ footer {
         box-sizing: border-box;
     }
 
-    .project-video-wrapper {
-        height: 180px;
+    .project-img-placeholder {
+        height: 140px;
     }
 
-    .about-skills-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
+    /* 5. GRAPHICS & SKILLS SECTION SHIFTS */
     .graphics-header {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 15px;
     }
-    
+
     .view-all-graphics-btn {
         width: 100%;
     }
-    
+
     .graphics-extra-grid {
         flex-direction: column;
         gap: 25px;
+    }
+
+    .about-skills-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* Slide Dropdown Animation Frames */
+@keyframes slideMenuDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomGalleryIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
